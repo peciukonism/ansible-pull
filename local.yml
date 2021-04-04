@@ -1,8 +1,23 @@
+# tasks to complete before running roles
 - hosts: localhost
-  connection: local
   become: true
+  pre_tasks:
+    - name: pre-run | update package cache (debian,ubuntu)
+      tags: always
+      apt: update_cache=yes
+      changed_when: False
+      when: ansible_distribution in ["Debian", "Ubuntu"]
 
-  tasks:
-    - name: Install htop
-      dnf:
-        name: htop
+# run role
+- hosts: localhost
+  tags: base
+  become: true
+  roles:
+    - base
+
+- hosts: localhost
+  tags: always
+    apt:
+      autoremove: yes
+      purge: yes
+    when: ansible_distribution in ["Debian","Ubuntu"]
