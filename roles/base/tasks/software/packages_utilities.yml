@@ -1,0 +1,33 @@
+- name: Base packages
+  tag: base
+  package:
+    state: latest
+    name:
+      - git
+      - htop
+      - lsof
+      - neofetch
+      - net-tools
+      - nmap
+      - rsync
+      - tmux
+      - vim
+
+- name: Desktop specific
+  tag: desktop
+  package:
+    state: latest
+    name:
+      - audacious
+      - audacity
+      - libreoffice
+      - neofetch
+      - net-tools
+      - nmap
+      - rsync
+      - tmux
+      - vim
+      - deluge
+      - ulauncher
+      - mailspring
+      - mpv
