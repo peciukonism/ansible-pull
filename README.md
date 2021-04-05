@@ -1,1 +1,1 @@
-Automating initial coniguartion for workstations or servers
+Automating initial configuration for workstations or servers
