@@ -1,5 +1,5 @@
-- name: Base packages
-#  tag: base
+- name: Installing base packages
+  tags: base
   package:
     state: latest
     name:
@@ -13,8 +13,8 @@
       - tmux
       - vim
 
-- name: Desktop specific
-#  tag: desktop
+- name: Installing desktop specific packages
+  tags: desktop
   package:
     state: latest
     name:
