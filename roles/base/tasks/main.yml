@@ -1,5 +1,4 @@
 - block:
   # install software
-  - import_tasks: software/updates.yml
   - import_tasks: software/packages_utilities.yml
 
