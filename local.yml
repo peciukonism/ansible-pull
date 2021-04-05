@@ -2,14 +2,14 @@
 - hosts: localhost
   become: true
   pre_tasks:
-    - name: pre-run | update package cache (debian,ubuntu)
+    - name: Updating indexes
       apt: update_cache=yes
       changed_when: False
       when: ansible_distribution in ["Debian", "Ubuntu"]
 
 # run role
 - hosts: localhost
-  tags: base
+  name: Packages
   become: true
   roles:
     - base
